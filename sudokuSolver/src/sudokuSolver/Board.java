@@ -21,7 +21,6 @@ public class Board {
 			for (int j = 0; j < GRID_SIZE; j++) {
 				board[i][j] = row.charAt(j)-48;
 			}
-
 		}
 	}
 
@@ -41,8 +40,4 @@ public class Board {
 		}
 	}
 
-
-	
-	
-	
 }

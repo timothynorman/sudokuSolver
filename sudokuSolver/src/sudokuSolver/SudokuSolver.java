@@ -32,11 +32,6 @@ public class SudokuSolver {
 	}
 	
 	
-
-
-
-
-
 	private static boolean isNumberInRow(int[][] board, int number, int row) {
 		for (int i = 0; i < GRID_SIZE; i++) {
 			if (board[row][i] == number) {
