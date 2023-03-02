@@ -7,52 +7,34 @@
 
 package sudokuSolver;
 
-
 public class SudokuSolver {
 
 	private static final int GRID_SIZE = 9;
 
 	public static void main(String[] args) {
 
-		// Hard-coded test case. TODO add method to have user-inputed boards. 
-		int[][] board = {
-				{7, 0, 2, 0, 5, 0, 6, 0, 0},
-				{0, 0, 0, 0, 0, 3, 0, 0, 0},
-				{1, 0, 0, 0, 0, 9, 5, 0, 0},
-				{8, 0, 0, 0, 0, 0, 0, 9, 0},
-				{0, 4, 3, 0, 0, 0, 7, 5, 0},
-				{0, 9, 0, 0, 0, 0, 0, 0, 8},
-				{0, 0, 9, 7, 0, 0, 0, 0, 5}, 
-				{0, 0, 0, 2, 0, 0, 0, 0, 0},
-				{0, 0, 7, 0, 4, 0, 2, 0, 3}
-		};
+		Board board = new Board();
 
-		printBoard(board);
+		int[][] puzzle = new int[GRID_SIZE][GRID_SIZE];
 		
-		if (solveBoard(board)) {
+		board.populateBoard(puzzle);
+		System.out.println("This is the starting board");
+		board.printBoard(puzzle);
+		System.out.println();
+		
+		if (solveBoard(puzzle)) {
 			System.out.println("Solved sucessfully!");
 		} else {
 			System.out.println("Unsolvable board");
 		}
 		
-		printBoard(board);
+		board.printBoard(puzzle);
 	}
 	
 	
-	private static void printBoard(int[][] board) {
-		for (int row = 0; row < GRID_SIZE; row++) {
-			if (row % 3 == 0 && row != 0) {
-				System.out.println("-----------");
-			}
-			for (int column = 0; column < GRID_SIZE; column++) {
-				if (column % 3 == 0 && column != 0) {
-					System.out.print("|");
-				}
-				System.out.print(board[row][column]);
-			}
-			System.out.println( );
-		}
-	}
+
+
+
 
 
 	private static boolean isNumberInRow(int[][] board, int number, int row) {
