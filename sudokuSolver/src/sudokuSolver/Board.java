@@ -2,14 +2,31 @@ package sudokuSolver;
 
 import java.util.Scanner;
 
+/**
+ * A class to prompt the user for input, converts that string into characters and builds a 
+ * Sudoku board from that. 
+ * @author tim
+ *
+ */
 public class Board {
 	
+	/**
+	 * The length of the rows, columns, and sub-squares (3x3)
+	 */
 	private static final int GRID_SIZE = 9;
 	Scanner keyboard = new Scanner(System.in);
 	
+	/**
+	 * No arg constructor. 
+	 */
 	public Board() {
 	}
 
+	/**
+	 * Prompts user to enter a Sudoku puzzle row-by-row, and then converts each string to an 
+	 * array of characters to populate the board. 
+	 * @param board The Sudoku puzzle board. 
+	 */
 	public void populateBoard(int[][] board) {
 		System.out.println("Enter each line of the Sudoku problem one line at a time.");
 		System.out.println("Do not use spaces or separators, and use 0 for blank squares.");
@@ -25,6 +42,10 @@ public class Board {
 	}
 
 
+	/**
+	 * Method to display the board. Blank spaces are shown as 0. 
+	 * @param board The Sudoku puzzle board. 
+	 */
 	public  void printBoard(int[][] board) {
 		for (int row = 0; row < GRID_SIZE; row++) {
 			if (row % 3 == 0 && row != 0) {

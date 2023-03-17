@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author tim_n
+ * @author tim
  *
  */
 module sudokuSolver {
